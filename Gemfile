@@ -53,3 +53,4 @@ group :development do
   gem 'faker'
 end
 
+gem 'dotenv-rails', groups: [:development, :test]

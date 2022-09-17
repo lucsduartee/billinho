@@ -17,7 +17,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_235300) do
   create_table "bills", force: :cascade do |t|
     t.decimal "value"
     t.date "due_date"
-    t.string "aasm_state"
+    t.string "state"
     t.bigint "enrollment_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -40,7 +40,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_235300) do
   create_table "institutions", force: :cascade do |t|
     t.string "name"
     t.string "cnpj"
-    t.string "type"
+    t.string "kind"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

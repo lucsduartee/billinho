@@ -37,26 +37,22 @@ Para usar o Billinho, siga estas etapas:
 
 ```
 ```
-## Rotas api
+## Rotas `/api/v1`
 
-| Verbo HTTP | Path               | Usado para     | Acessível          |
-|---         |---                 |---             |---                 |
-|    GET     | /institutions      | row 2 column 3 | :heavy_check_mark: |
-|    GET     | /institutions/:id  | row 2 column 3 | :heavy_check_mark: |
-|   POST     | /institutions      | row 2 column 3 | :heavy_check_mark: |
-|    PUT     | /institutions/:id  | row 2 column 3 | :heavy_check_mark: |
-| DELETE     | /institutions/:id  | row 2 column 3 | :heavy_check_mark: |
-|    GET     | /students          | row 2 column 3 | :heavy_check_mark: |
-|    GET     | /students/:id      | row 2 column 3 | :heavy_check_mark: |
-|   POST     | /students          | row 2 column 3 | :heavy_check_mark: |
-|    PUT     | /students/:id      | row 2 column 3 | :heavy_check_mark: |
-| DELETE     | /students/:id      | row 2 column 3 | :heavy_check_mark: |
-|    GET     | /enrollments       | row 2 column 3 | :heavy_check_mark: |
-|    GET     | /enrollments/:id   | row 2 column 3 | :heavy_check_mark: |
-|   POST     | /enrollments       | row 2 column 3 | :heavy_check_mark: |
-|    PUT     | /enrollments/:id   | row 2 column 3 | :x:                |
-| DELETE     | /enrollments/:id   | row 2 column 3 | :x:                |
-|    GET     | /bills             | row 2 column 3 | :heavy_check_mark: |
-|    GET     | /bills/:id         | row 2 column 3 | :heavy_check_mark: |
-|    PUT     | /bills/:id         | row 2 column 3 | :x:                |
-| DELETE     | /bills/:id         | row 2 column 3 | :x:                |
+| Verbo HTTP | Path               | Usado para                        |
+|---         |---                 |---                                |
+|    GET     | /institutions      | Listar instituições               |
+|    GET     | /institutions/:id  | Listar instituição com o `:id`    |
+|   POST     | /institutions      | Criar instituição                 |
+|    PUT     | /institutions/:id  | Atualizar instituição com o `:id` |
+| DELETE     | /institutions/:id  | Deletar instituição com o `:id`   |
+|    GET     | /students          | Listar estudantes                 |
+|    GET     | /students/:id      | Listar estudante com o `:id`      |
+|   POST     | /students          | Criar estudante                   |
+|    PUT     | /students/:id      | Atualizar estudante com o `:id`   |
+| DELETE     | /students/:id      | Deletar estudante com o `:id`     |
+|    GET     | /enrollments       | Listar matrículas                 |
+|    GET     | /enrollments/:id   | Listar matrícula com o `:id`      |
+|   POST     | /enrollments       | Criar matrícula                   |
+|    GET     | /bills             | Listar faturas                    |
+|    GET     | /bills/:id         | Listar fatura com o `:id`         |

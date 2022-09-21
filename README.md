@@ -37,3 +37,26 @@ Para usar o Billinho, siga estas etapas:
 
 ```
 ```
+## Rotas api
+
+| Verbo HTTP | Path               | Usado para     | Acessível          |
+|---         |---                 |---             |---                 |
+|    GET     | /institutions      | row 2 column 3 | :heavy_check_mark: |
+|    GET     | /institutions/:id  | row 2 column 3 | :heavy_check_mark: |
+|   POST     | /institutions      | row 2 column 3 | :heavy_check_mark: |
+|    PUT     | /institutions/:id  | row 2 column 3 | :heavy_check_mark: |
+| DELETE     | /institutions/:id  | row 2 column 3 | :heavy_check_mark: |
+|    GET     | /students          | row 2 column 3 | :heavy_check_mark: |
+|    GET     | /students/:id      | row 2 column 3 | :heavy_check_mark: |
+|   POST     | /students          | row 2 column 3 | :heavy_check_mark: |
+|    PUT     | /students/:id      | row 2 column 3 | :heavy_check_mark: |
+| DELETE     | /students/:id      | row 2 column 3 | :heavy_check_mark: |
+|    GET     | /enrollments       | row 2 column 3 | :heavy_check_mark: |
+|    GET     | /enrollments/:id   | row 2 column 3 | :heavy_check_mark: |
+|   POST     | /enrollments       | row 2 column 3 | :heavy_check_mark: |
+|    PUT     | /enrollments/:id   | row 2 column 3 | :x:                |
+| DELETE     | /enrollments/:id   | row 2 column 3 | :x:                |
+|    GET     | /bills             | row 2 column 3 | :heavy_check_mark: |
+|    GET     | /bills/:id         | row 2 column 3 | :heavy_check_mark: |
+|    PUT     | /bills/:id         | row 2 column 3 | :x:                |
+| DELETE     | /bills/:id         | row 2 column 3 | :x:                |

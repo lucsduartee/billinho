@@ -20,9 +20,15 @@ module Api
       end
       
       def update
+        render json: {
+          status: 'NOT_IMPLEMENTED',
+        }, status: :not_found
       end
 
       def destroy
+        render json: {
+          status: 'NOT_IMPLEMENTED',
+        }, status: :not_found
       end
 
       private

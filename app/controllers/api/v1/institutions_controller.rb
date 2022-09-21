@@ -1,5 +1,3 @@
-require 'services/enrollments_service'
-
 module Api
   module V1
     class InstitutionsController < ApplicationController

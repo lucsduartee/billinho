@@ -22,7 +22,6 @@ module Api
       def create
         enrollment = EnrollmentsService.create(enrollment_params)
 
-        p params
         render json: {
           status: 'SUCCESS',
           data: enrollment
@@ -30,9 +29,15 @@ module Api
       end
       
       def update
+        render json: {
+          status: 'NOT_IMPLEMENTED',
+        }, status: :not_found
       end
 
       def destroy
+        render json: {
+          status: 'NOT_IMPLEMENTED',
+        }, status: :not_found
       end
 
       private

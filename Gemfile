@@ -54,3 +54,4 @@ group :development do
 end
 
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'expinho', path: 'engines/expinho'

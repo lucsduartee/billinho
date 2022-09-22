@@ -1,3 +1,9 @@
+PATH
+  remote: engines/expinho
+  specs:
+    expinho (0.1.0)
+      rails (>= 7.0.3.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -176,6 +182,7 @@ DEPENDENCIES
   bootsnap
   debug
   dotenv-rails
+  expinho!
   faker
   pg (~> 1.1)
   puma (~> 5.0)

@@ -11,4 +11,6 @@ Rails.application.routes.draw do
       resources :bills
     end
   end
+
+  mount Expinho::Engine, at: "/expinho"
 end

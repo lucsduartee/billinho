@@ -11,7 +11,7 @@ paths:
       - Faturas
       responses:
         '200':
-          description: successful
+          description: Successful
           content:
             application/json:
               examples:
@@ -21,8 +21,8 @@ paths:
                     data:
                       value: decimal 
                       due_date: date
-                      state: pending | overdue | paid
-                      enrollment_id: foreign key
+                      state: string
+                      enrollment_id: integer
   "/api/v1/bills/{id}":
     parameters:
     - name: id
@@ -32,21 +32,78 @@ paths:
       schema:
         type: string
     get:
-      summary: show bill
+      summary: Lista uma fatura pelo id
+      tags:
+      - Faturas
       responses:
         '200':
-          description: successful
+          description: Successful
+          content:
+            application/json:
+              examples:
+                bill:
+                  value:
+                    status: SUCCESS
+                    data:
+                      value: decimal 
+                      due_date: date
+                      state: string
+                      enrollment_id: integer
   "/api/v1/enrollments":
     get:
-      summary: list enrollments
+      summary: Lista as matrículas
+      tags:
+      - Matrículas
       responses:
         '200':
-          description: successful
+          description: Successful
+          content:
+            application/json:
+              examples:
+                enrollment:
+                  value:
+                    status: SUCCESS
+                    data:
+                      course_name: string
+                      total_value: decimal
+                      due_date: integer
+                      bills_quantity: integer
+                      institution_id: integer
+                      student_id: integer
     post:
-      summary: create enrollment
+      summary: Cria uma matrícula
+      tags:
+      - Matrículas
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+              enrollment:
+                course_name: string
+                total_value: float
+                due_date: integer
+                bills_quantity: integer
+                institution_id: integer
+                student_id: integer
       responses:
         '200':
-          description: successful
+          description: Successful
+          content:
+            application/json:
+              examples:
+                enrollment:
+                  value:
+                    status: SUCCESS
+                    data:
+                      course_name: string
+                      total_value: decimal
+                      due_date: integer
+                      bills_quantity: integer
+                      institution_id: integer
+                      student_id: integer
   "/api/v1/enrollments/{id}":
     parameters:
     - name: id
@@ -56,21 +113,71 @@ paths:
       schema:
         type: string
     get:
-      summary: show enrollment
+      summary: Lista uma matrícula pelo id
+      tags:
+      - Matrículas
       responses:
         '200':
-          description: successful
+          description: Successful
+          content:
+            application/json:
+              examples:
+                enrollment:
+                  value:
+                    status: SUCCESS
+                    data:
+                      course_name: string
+                      total_value: decimal
+                      due_date: integer
+                      bills_quantity: integer
+                      institution_id: integer
+                      student_id: integer
   "/api/v1/institutions":
     get:
-      summary: list institutions
+      summary: Lista as instituições
+      tags:
+      - Instituições
       responses:
         '200':
-          description: successful
+          description: Successful
+          content:
+            application/json:
+              examples:
+                institution:
+                  value:
+                    status: SUCCESS
+                    data:
+                      name: string
+                      cnpj: string
+                      kind: string
     post:
-      summary: create institution
+      summary: Cria uma instituição
+      tags:
+      - Instituições
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+              institution:
+                      name: string
+                      cnpj: string
+                      kind: string 
       responses:
         '200':
-          description: successful
+          description: Successful
+          content:
+            application/json:
+              examples:
+                institution:
+                  value:
+                    status: SUCCESS
+                    data:
+                      name: string
+                      cnpj: string
+                      kind: string
   "/api/v1/institutions/{id}":
     parameters:
     - name: id
@@ -80,31 +187,122 @@ paths:
       schema:
         type: string
     get:
-      summary: show institution
+      summary: Lista uma instituição pelo id
+      tags:
+      - Instituições
       responses:
         '200':
-          description: successful
+          description: Successful
+          content:
+            application/json:
+              examples:
+                institution:
+                  value:
+                    status: SUCCESS
+                    data:
+                      name: string
+                      cnpj: string
+                      kind: string
     put:
-      summary: update institution
+      summary: Atualiza dados de um instuição
+      tags:
+      - Instituições
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+              institution:
+                      name: string
+                      cnpj: string
+                      kind: string
       responses:
         '200':
-          description: successful
+          description: Successful
+          content:
+            application/json:
+              examples:
+                institution:
+                  value:
+                    status: SUCCESS
+                    data:
+                      name: string
+                      cnpj: string
+                      kind: string
     delete:
-      summary: delete institution
+      summary: Deleta uma instituição
+      tags:
+      - Instituições
       responses:
         '200':
-          description: successful
+          description: Successful
+          content:
+            application/json:
+              examples:
+                institution:
+                  value:
+                    status: SUCCESS
+                    data:
+                      name: string
+                      cnpj: string
+                      kind: string
   "/api/v1/students":
     get:
-      summary: list students
+      summary: Lista os estudantes
+      tags:
+      - Estudantes
       responses:
         '200':
-          description: successful
+          description: Successful
+          content:
+            application/json:
+              examples:
+                student:
+                  value:
+                    status: SUCCESS
+                    data:
+                      name: string
+                      cpf: string
+                      gender: string
+                      payment_way: string
+                      birthday: date
+                      cellphone: integer
     post:
-      summary: create student
+      summary: Cria um estudante
+      tags:
+      - Estudantes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+              student:
+                name: string
+                cpf: string
+                gender: string
+                payment_way: string
+                birthday: date
+                cellphone: integer
       responses:
         '200':
-          description: successful
+          description: Successful
+          content:
+            application/json:
+              examples:
+                student:
+                  value:
+                    status: SUCCESS
+                    data:
+                      name: string
+                      cpf: string
+                      gender: string
+                      payment_way: string
+                      birthday: date
+                      cellphone: integer
   "/api/v1/students/{id}":
     parameters:
     - name: id
@@ -114,22 +312,81 @@ paths:
       schema:
         type: string
     get:
-      summary: show student
+      summary: Lista um estudante pelo id
+      tags:
+      - Estudantes
       responses:
         '200':
-          description: successful
+          description: Successful
+          content:
+            application/json:
+              examples:
+                student:
+                  value:
+                    status: SUCCESS
+                    data:
+                      name: string
+                      cpf: string
+                      gender: string
+                      payment_way: string
+                      birthday: date
+                      cellphone: integer
     put:
-      summary: update student
+      summary: Atualiza dados de um estudante
+      tags:
+      - Estudantes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+              student:
+                name: string
+                cpf: string
+                gender: string
+                payment_way: string
+                birthday: date
+                cellphone: integer
       responses:
         '200':
-          description: successful
+          description: Successful
+          content:
+            application/json:
+              examples:
+                student:
+                  value:
+                    status: SUCCESS
+                    data:
+                      name: string
+                      cpf: string
+                      gender: string
+                      payment_way: string
+                      birthday: date
+                      cellphone: integer
     delete:
-      summary: delete student
+      summary: Deleta um estudante
+      tags:
+      - Estudantes
       responses:
         '200':
-          description: successful
+          description: Successful
+          content:
+            application/json:
+              examples:
+                student:
+                  value:
+                    status: SUCCESS
+                    data:
+                      name: string
+                      cpf: string
+                      gender: string
+                      payment_way: string
+                      birthday: date
+                      cellphone: integer
 servers:
 - url: https://{defaultHost}
   variables:
     defaultHost:
-      default: www.example.com
+      default: localhost:3000

@@ -4,17 +4,15 @@
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/lucsduartee/billinho?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/lucsduartee/billinho?style=for-the-badge)
-![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/lucsduartee/billinho?style=for-the-badge)
 
 <!---<img src="exemplo-image.png" alt="exemplo imagem">--->
 
 ### Ajustes e melhorias
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
-
+- [x] Documentação com Swagger
 - [ ] Adicionar testes unitários
 - [ ] Criar ***Billinho Admin***
-- [ ] Adicionar rotas CRUD que faltam para `Enrollments` e `Bills`
 - [ ] Criar a Engine de exportação do ***Billinho***
 
 ## 💻 Pré-requisitos
@@ -40,6 +38,8 @@ Para usar o Billinho, siga estas etapas:
 ```
 ```
 ## Rotas `/api/v1`
+Essas são as rotas da Api. Para ver detalhadamente o que cada requisição espera como parâmetros ou o que cada uma retorna,
+acesse a documentação no _Swagger_ utilizando a rota `http://localhost:3000/api-docs`.
 
 | Verbo HTTP | Path               | Usado para                        |
 |---         |---                 |---                                |

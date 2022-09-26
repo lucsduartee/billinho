@@ -1,0 +1,135 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/bills":
+    get:
+      summary: Lista as faturas
+      tags:
+      - Faturas
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              examples:
+                bill:
+                  value:
+                    status: SUCCESS
+                    data:
+                      value: decimal 
+                      due_date: date
+                      state: pending | overdue | paid
+                      enrollment_id: foreign key
+  "/api/v1/bills/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show bill
+      responses:
+        '200':
+          description: successful
+  "/api/v1/enrollments":
+    get:
+      summary: list enrollments
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create enrollment
+      responses:
+        '200':
+          description: successful
+  "/api/v1/enrollments/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show enrollment
+      responses:
+        '200':
+          description: successful
+  "/api/v1/institutions":
+    get:
+      summary: list institutions
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create institution
+      responses:
+        '200':
+          description: successful
+  "/api/v1/institutions/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show institution
+      responses:
+        '200':
+          description: successful
+    put:
+      summary: update institution
+      responses:
+        '200':
+          description: successful
+    delete:
+      summary: delete institution
+      responses:
+        '200':
+          description: successful
+  "/api/v1/students":
+    get:
+      summary: list students
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create student
+      responses:
+        '200':
+          description: successful
+  "/api/v1/students/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show student
+      responses:
+        '200':
+          description: successful
+    put:
+      summary: update student
+      responses:
+        '200':
+          description: successful
+    delete:
+      summary: delete student
+      responses:
+        '200':
+          description: successful
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com

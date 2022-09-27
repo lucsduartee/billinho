@@ -11,33 +11,35 @@
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 - [x] Documentação com Swagger
+- [x] Dockerizar a aplicação
+- [ ] Criar a Engine de exportação do ***Billinho*** (em progresso)
 - [ ] Adicionar testes unitários
 - [ ] Criar ***Billinho Admin***
-- [ ] Criar a Engine de exportação do ***Billinho***
 
-## 💻 Pré-requisitos
+## 💻 Pré-requisito
 
-Antes de começar, verifique se você atendeu aos seguintes requisitos:
+O único pré requisito para utilizar o Billinho é ter o **Docker** e o **Docker Compose** instalado na sua máquina.
+Se você não possui essas ferramentas, siga as respectivas ferrametas para a instalação:
+- [Docker](https://docs.docker.com/engine/install/ubuntu/)
+- [Docker Compose](https://docs.docker.com/compose/install/linux/)
 
 ## 🚀 Instalando o Billinho
 
-Para instalar o Billinho, siga estas etapas:
+Depois de clonar o projeto, siga estas etapas:
+- Subindo os serviços:
+```sh
+docker-compose up
+```
+- Na primeira utilização é necessário fazer o _setup_ do banco localmente. Rode os seguintes comandos,
+ cada qual isoladamente, em um outro terminal:
+```sh
+docker-compose run billinho rails db:create
+docker-compose run billinho rails db:migrate
+docker-compose run billinho rails db:seed
+```
+A aplicação estará disponível em `http://localhost:3000/api/v1`
 
-Linux e macOS:
-```
-```
-
-Windows:
-```
-```
-
-## ☕ Usando o Billinho
-
-Para usar o Billinho, siga estas etapas:
-
-```
-```
-## Rotas `/api/v1`
+## Rotas
 Essas são as rotas da Api. Para ver detalhadamente o que cada requisição espera como parâmetros ou o que cada uma retorna,
 acesse a documentação no _Swagger_ utilizando a rota `http://localhost:3000/api-docs`.
 

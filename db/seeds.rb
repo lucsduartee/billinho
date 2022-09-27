@@ -21,4 +21,13 @@ institution_types = ['Universidade', 'Escola', 'Creche']
 		payment_way: "Boleto",
 		birthday: "2000-03-21"
   })
+
+  EnrollmentsService.create({
+    course_name: "Física",
+    total_value: 2000,
+    due_date: 25,
+    bills_quantity: 10,
+    institution_id: 1,
+    student_id: 1
+  })
 end
